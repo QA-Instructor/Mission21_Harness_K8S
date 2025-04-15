@@ -35,6 +35,7 @@ pipeline:
                     repo: victorialloyd/harness-vat-calc
                     tags:
                       - <+pipeline.sequenceId>
+                      - latest
                     caching: true
     - stage:
         name: deploy_to_k8s
