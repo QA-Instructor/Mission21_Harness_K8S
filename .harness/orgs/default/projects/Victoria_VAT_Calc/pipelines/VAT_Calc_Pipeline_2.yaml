@@ -5,8 +5,9 @@ pipeline:
   properties:
     ci:
       codebase:
-        connectorRef: Mission18_GitHub_Connector
+        connectorRef: Mission21_GitHub_Connector
         build: <+input>
+        sparseCheckout: []
   stages:
     - stage:
         name: build docker image
