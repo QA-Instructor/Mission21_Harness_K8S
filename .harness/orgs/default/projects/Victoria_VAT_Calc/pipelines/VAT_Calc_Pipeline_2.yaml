@@ -1,0 +1,40 @@
+pipeline:
+  projectIdentifier: Victoria_VAT_Calc
+  orgIdentifier: default
+  tags: {}
+  properties:
+    ci:
+      codebase:
+        connectorRef: Mission18_GitHub_Connector
+        build: <+input>
+  stages:
+    - stage:
+        name: build docker image
+        identifier: build_docker_image
+        description: ""
+        type: CI
+        spec:
+          cloneCodebase: true
+          caching:
+            enabled: true
+            override: true
+          platform:
+            os: Linux
+            arch: Amd64
+          runtime:
+            type: Cloud
+            spec: {}
+          execution:
+            steps:
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: build_vat_calc_and_push_to_Dockerhub
+                  identifier: uild_vat_calc_and_push_to_Dockerhub
+                  spec:
+                    connectorRef: vat_dockerhub_connector
+                    repo: victorialloyd/harness-vat-calc
+                    tags:
+                      - <+pipeline.sequenceId>
+                    caching: true
+  identifier: VAT_Calc_Pipeline_2
+  name: VAT Calc Pipeline 2
