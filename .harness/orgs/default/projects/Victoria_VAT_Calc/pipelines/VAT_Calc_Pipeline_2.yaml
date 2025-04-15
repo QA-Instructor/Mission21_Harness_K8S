@@ -47,14 +47,6 @@ pipeline:
           service:
             serviceRef: victoriavatcalc
             gitBranch: main
-            serviceInputs:
-              serviceDefinition:
-                type: Kubernetes
-                spec:
-                  artifacts:
-                    primary:
-                      primaryArtifactRef: <+input>
-                      sources: <+input>
           environment:
             environmentRef: victoria_prod
             gitBranch: main
