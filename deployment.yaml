@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: lbgcalc
-          image: <+artifact.image>
+          image: victorialloyd/harness-vat-calc
           imagePullPolicy: Always
           resources:
             requests:
