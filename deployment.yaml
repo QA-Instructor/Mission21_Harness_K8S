@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: lbgcalc
-          image: dockerid/image:latest
+          image: <+artifact.image>
           imagePullPolicy: Always
           resources:
             requests:
