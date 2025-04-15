@@ -3,7 +3,33 @@ service:
   identifier: victoriavatcalc
   serviceDefinition:
     type: Kubernetes
-    spec: {}
+    spec:
+      artifacts:
+        primary:
+          primaryArtifactRef: <+input>
+          sources:
+            - spec:
+                connectorRef: account.harnessImage
+                imagePath: victorialloyd/harness-vat-calc
+                tag: <+input>
+                digest: ""
+              identifier: victoria_vat_calculator
+              type: DockerRegistry
+      manifests:
+        - manifest:
+            identifier: production_deployment
+            type: K8sManifest
+            spec:
+              store:
+                type: Github
+                spec:
+                  connectorRef: Mission21_GitHub_Connector
+                  gitFetchType: Branch
+                  paths:
+                    - deployment.yaml
+                  branch: main
+              skipResourceVersioning: false
+              enableDeclarativeRollback: false
   gitOpsEnabled: false
   orgIdentifier: default
   projectIdentifier: Victoria_VAT_Calc
