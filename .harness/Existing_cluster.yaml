@@ -1,0 +1,13 @@
+infrastructureDefinition:
+  name: Existing cluster
+  identifier: Existing_cluster
+  orgIdentifier: default
+  projectIdentifier: Victoria_VAT_Calc
+  environmentRef: victoria_prod
+  deploymentType: Kubernetes
+  type: KubernetesDirect
+  spec:
+    connectorRef: victoria_k8s_connector
+    namespace: lbg-trainer
+    releaseName: release-<+INFRA_KEY_SHORT_ID>
+  allowSimultaneousDeployments: false
