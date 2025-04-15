@@ -5,16 +5,7 @@ service:
     type: Kubernetes
     spec:
       artifacts:
-        primary:
-          primaryArtifactRef: <+input>
-          sources:
-            - spec:
-                connectorRef: account.harnessImage
-                imagePath: victorialloyd/harness-vat-calc
-                tag: <+input>
-                digest: ""
-              identifier: victoria_vat_calculator
-              type: DockerRegistry
+        primary: {}
       manifests:
         - manifest:
             identifier: production_deployment
