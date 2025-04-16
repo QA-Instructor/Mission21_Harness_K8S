@@ -20,7 +20,7 @@ spec:
         - name: lbgcalc
           image: victorialloyd/harness-vat-calc
           imagePullPolicy: Always
-          kubernetes.io/change-cause: "deploy version 2"
+          change-cause: "deploy version 2"
           resources:
             requests:
               memory: "8Mi"
