@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: lbgcalc
-          image: victorialloyd/harness-vat-calc:11
+          image: victorialloyd/harness-vat-calc:14
           imagePullPolicy: Always
           resources:
             requests:
