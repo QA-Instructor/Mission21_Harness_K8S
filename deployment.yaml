@@ -16,10 +16,9 @@ spec:
         app: lbgcalc
         tier: lbgcalc
     spec:
-      change-cause: "deploy version 9"
       containers:
         - name: lbgcalc
-          image: victorialloyd/harness-vat-calc:9
+          image: victorialloyd/harness-vat-calc:11
           imagePullPolicy: Always
           resources:
             requests:
